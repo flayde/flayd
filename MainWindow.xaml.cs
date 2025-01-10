@@ -42,5 +42,15 @@ namespace flayd
 
             ResultLabel.Content = "Результат: " + result;
         }
+
+        private void MultiplyNumbers_Click(object sender, RoutedEventArgs e)
+        {
+
+            double num1 = Convert.ToDouble(TextBox1.Text);
+            double num2 = Convert.ToDouble(TextBox2.Text);
+            double result = num1 * num2;
+
+            ResultLabel.Content = "Результат: " + result;
+        }
     }
 }

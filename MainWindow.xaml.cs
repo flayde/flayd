@@ -52,5 +52,18 @@ namespace flayd
 
             ResultLabel.Content = "Результат: " + result;
         }
+
+        private void DivideNumbers_Click(object sender, RoutedEventArgs e)
+        {
+            double num1 = Convert.ToDouble(TextBox1.Text);
+            double num2 = Convert.ToDouble(TextBox2.Text);
+            if (num2 == 0)
+            {
+                ResultLabel.Content = "Ошибка: деление на ноль!";
+                return;
+            }
+            double result = num1 / num2;
+            ResultLabel.Content = "Результат: " + result;
+        }
     }
 }

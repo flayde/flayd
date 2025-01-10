@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:flayd"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="300" Width="400">
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="LightBlue" Offset="0.0" />
+            <GradientStop Color="White" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="DarkGreen" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="TextBox1" Grid.Row="0" Width="200" Margin="5" HorizontalAlignment="Center" />
+        <TextBox x:Name="TextBox2" Grid.Row="1" Width="200" Margin="5" HorizontalAlignment="Center" />
+        <Button  Content="+" Grid.Row="2" Width="100" Height="30" Margin="5" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}" Click="AddNumbers_Click" />
+        <Button Content="-" Grid.Row="3" Width="100" Height="30" Margin="5" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}" Click="SubtractNumbers_Click" />
+        <Button Content="*" Grid.Row="4" Width="100" Height="30" Margin="5" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}" Click="MultiplyNumbers_Click" />
+        <Button Content="/" Grid.Row="5" Width="100" Height="30" Margin="5" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle}" Click="DivideNumbers_Click" />
+
+        <Label x:Name="ResultLabel" Grid.Row="6" Content="Результат: " Margin="5" HorizontalAlignment="Center" />
     </Grid>
 </Window>
